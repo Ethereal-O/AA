@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: root
+    password: '020402'
+    url: jdbc:mysql://localhost:3306/mybookstore?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    tomcat:
+      max-active: 20
+
+  application:
+    name: Get-Book-Author
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8553
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8040/eureka
+

@@ -1,0 +1,155 @@
+@font-face{
+    font-family: 'poppins';
+    src : url('../fonts/Poppins-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins'; 
+}
+.allusersmain{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #161626;
+}
+.allusersmain::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%;
+    background: linear-gradient(#2193b0,#6dd5ed);
+    clip-path: circle(30% at right 70%);
+}
+.allusersmain::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%;
+    background: linear-gradient(#ee9ca7,#ffdde1);
+    clip-path: circle(20% at 10% 10%);
+}
+.allusersmain .header{
+    margin: 15px 0 15px 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 40px;
+    z-index: 1;
+}
+.allusersmain .alluserscontainer{
+    width: 1400px;
+    height: 550px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.allusersmain .alluserscontainer .card{
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(255,255,255,0.1);
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+}
+.allusersmain .alluserscontainer .card .name{
+    position: absolute;
+    left: 1%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+.allusersmain .alluserscontainer .card .name .userinfoelement,.userinfotitle{
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: rgba(255,255,255,0);
+    overflow: hidden;
+}
+.allusersmain .alluserscontainer .card .name .userinfotitle,.allusersmain .alluserscontainer .card .name .userinfoelement .userinfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.allusersmain .alluserscontainer .card .name .userinfotitle h2,.allusersmain .alluserscontainer .card .name .userinfoelement .userinfo *{
+    width: 20%;
+}
+.allusersmain .alluserscontainer .card .name .userinfoelement .userinfo p:hover{
+    background: rgba(255,255,255,0.3);
+}
+
+.allusersmain .alluserscontainer .searchbar{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255,255,255,0.1);
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    color: #fff;
+}
+.allusersmain .alluserscontainer .searchbar .searchdata{
+    position: absolute;
+    left:10px;
+    top:5px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    height: 40px;
+    width: 1460px;
+    width:90%;
+}
+.allusersmain .alluserscontainer .searchbar .searchbutton{
+    position: absolute;
+    right:10px;
+    top:5px;
+    background: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+

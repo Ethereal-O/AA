@@ -1,0 +1,15 @@
+rm -r D:\tmp
+
+cd D:\Learning_And_Life\Kafka\kafka
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+cd D:\Learning_And_Life\Kafka\kafka
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+cd D:\Learning_And_Life\Redis\Redis-x64-5.0.14.1\
+.\redis-server.exe .\redis.windows.conf
+(.\redis-cli.exe)
+
+cd D:\Learning_And_Life\Solr\solr-9.0.0
+./bin/solr start -e cloud
+./bin/solr stop -all

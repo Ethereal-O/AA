@@ -1,0 +1,305 @@
+@font-face{
+    font-family: 'poppins';
+    src : url('../fonts/Poppins-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins'; 
+}
+.mycartsmain{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #161626;
+}
+.mycartsmain::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%;
+    background: linear-gradient(#2193b0,#6dd5ed);
+    clip-path: circle(30% at right 70%);
+}
+.mycartsmain::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%;
+    background: linear-gradient(#ee9ca7,#ffdde1);
+    clip-path: circle(20% at 10% 10%);
+}
+.mycartsmain .header{
+    margin: 15px 0 15px 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 40px;
+    z-index: 1;
+}
+.mycartsmain .mycartscontainer{
+    width: 1400px;
+    height: 550px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.mycartsmain .mycartscontainer .card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+}
+.mycartsmain .mycartscontainer .card .name{
+    position: absolute;
+    left: 1%;
+    width: 24%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+.mycartsmain .mycartscontainer .card .name .nameandpriceelement,.nameandpricetitle{
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: rgba(255,255,255,0);
+    overflow: hidden;
+}
+.mycartsmain .mycartscontainer .card .name .nameandpricetitle,.mycartsmain .mycartscontainer .card .name .nameandpriceelement .nameandprice{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mycartsmain .mycartscontainer .card .name .nameandpricetitle h2,.mycartsmain .mycartscontainer .card .name .nameandpriceelement .nameandprice p{
+    width: 50%;
+}
+.mycartsmain .mycartscontainer .card .name .nameandpriceelement .nameandprice:hover{
+    background: rgba(255,255,255,0.3);
+}
+.mycartsmain .mycartscontainer .card .details{
+    position: absolute;
+    right: 1%;
+    width: 74%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    align-items: center;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+.mycartsmain .mycartscontainer .card .details div{
+    display: flex;
+    flex-direction: row;
+}
+.mycartsmain .mycartscontainer .card .details img{
+    width: auto;
+    height: auto;
+    max-width: 40%;
+    max-height: 40%;
+}
+.mycartsmain .mycartscontainer .card .details button{
+    width: 15%;
+    margin: 40px auto;
+    padding: 15px 32px;
+    background: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+.mycartsmain .mycartscontainer .card .details button:hover{
+    background:rgba(255,255,255,0.3);
+}
+
+.mycartsmain .mycartscontainer .totbar{
+    position: relative;
+    width: 1600px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.1);
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+}
+
+.mycartsmain .mycartscontainer .totbar .buybutton{
+    position: absolute;
+    right:10px;
+    top:5px;
+    background: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.mycartsmain .buycontent{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-color: rgba(255,255,255,0.1);
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    visibility: hidden;
+}
+.mycartsmain .buycontent .word{
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+}
+.mycartsmain .buycontent .word p{
+    margin: 30px;
+}
+.mycartsmain .buycontent .word .inputbox{
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+}
+.mycartsmain .buycontent .word .inputbox .display{
+    width: 180px;
+}
+.mycartsmain .buycontent .word .inputbox .typein{
+    position: relative;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+}
+.mycartsmain .buycontent .buybutton{
+    width: 150px;
+    margin: 40px auto;
+    padding: 15px 32px;
+    background-color: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+.mycartsmain .buycontent .buybutton:hover{
+    background:rgba(255,255,255,0.3);
+}
+
+.mycartsmain .BScontents{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-color: rgba(255,255,255,0.1);
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    visibility: hidden;
+}
+.mycartsmain .BScontents .BScontentstitle{
+    height: 20%;
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+.mycartsmain .BScontents .BScontentsname{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+.mycartsmain .BScontents .BScontentsname .BScontentsorderbooks{
+    display: flex;
+    flex-direction: row;
+}
+.mycartsmain .BScontents .BScontentsname .BScontentsorderbooks *{
+    width:50%;
+}
+.mycartsmain .BScontents button{
+    height: 20%;
+    width: 150px;
+    margin: 40px auto;
+    padding: 15px 32px;
+    background-color: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
