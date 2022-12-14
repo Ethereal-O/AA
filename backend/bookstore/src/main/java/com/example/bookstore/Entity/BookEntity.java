@@ -26,9 +26,9 @@ public class BookEntity {
     @Basic
     @Column(name = "image")
     private String image;
-    @Basic
-    @Column(name = "description")
-    private String description;
+//    @Basic
+//    @Column(name = "description")
+//    private String description;
 
     @Basic
     @Column(name = "inventory")
@@ -41,6 +41,9 @@ public class BookEntity {
     @Basic
     @Column(name = "ISBN_num")
     private Integer ISBN_num;
+
+    @Transient
+    private String description;
 
 
 

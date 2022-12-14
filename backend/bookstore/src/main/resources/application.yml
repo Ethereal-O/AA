@@ -29,6 +29,10 @@ spring:
     tomcat:
       max-active: 20
 
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mybookstore
+
   jpa:
     database: mysql
     show-sql: true
