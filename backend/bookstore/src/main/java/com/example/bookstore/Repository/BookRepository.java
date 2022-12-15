@@ -1,6 +1,7 @@
 package com.example.bookstore.Repository;
 
 import com.example.bookstore.Entity.BookEntity;
+import com.example.bookstore.solr.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,4 +16,7 @@ public interface BookRepository extends JpaRepository<BookEntity,Integer> {
     public BookEntity findBookByName(String name);
     @Query(value = "from BookEntity")
     public List<BookEntity> findallBook();
+
+    @Query(value = "from BookEntity where type=:type")
+    public List<BookEntity> findByType(String type);
 }

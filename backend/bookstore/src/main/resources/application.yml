@@ -33,6 +33,11 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/mybookstore
 
+    Neo4j:
+      uri: bolt://127.0.0.1:7687
+      username: root
+      password: '020402'
+
   jpa:
     database: mysql
     show-sql: true

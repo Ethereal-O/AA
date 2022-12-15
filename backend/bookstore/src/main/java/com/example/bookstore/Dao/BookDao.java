@@ -1,6 +1,7 @@
 package com.example.bookstore.Dao;
 
 import com.example.bookstore.Entity.BookEntity;
+import com.example.bookstore.Entity.BookTypeEntity;
 import com.example.bookstore.Entity.UserEntity;
 
 import java.util.List;
@@ -13,8 +14,13 @@ public interface BookDao {
     //根据唯一标识查询单个实体
     public BookEntity findBookById(Integer id);
     public BookEntity findBookByName(String name);
+    public List<BookEntity> findBookByType(String type);
     //根据实体的条件查询多个实体
     public List<BookEntity> findBookByExample(BookEntity book);
     //得到所有实体
     public List<BookEntity> findallBook();
+
+    public boolean addbooktypedata();
+
+    public List<BookTypeEntity> searchsimilars(String type);
 }

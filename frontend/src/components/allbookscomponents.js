@@ -4,7 +4,7 @@ import { Searchbar } from './searchbarcomponents';
 import { Details } from './detailscomponents';
 import { NameList } from './namelistcomponents';
 import { CategoryList } from './categorylistcomponents';
-import { checklogin, addcart, admindeletebook, adminaddbook, searchbookdata,getbookauthor } from './connect_to_backend';
+import { checklogin, addcart, admindeletebook, adminaddbook, searchbookdata, getbookauthor, searchbooktype } from './connect_to_backend';
 
 export class Allbookscontainer extends React.Component {
 
@@ -115,49 +115,66 @@ export class Allbookscontainer extends React.Component {
     }
     searchdata = () => {
         var searchwhat = document.getElementById("searchdata").value;
+        var searchby = document.getElementById("searchby").value;
 
-        // *******************************
-        // for search book name
-        // *******************************
-        // var newdata=[];
-        // for (let i=0;i<this.state.nowcatedata.length;i++){
-        //     if(this.state.nowcatedata[i][2].search(searchwhat)!==-1){
-        //         newdata.push(this.state.nowcatedata[i]);
-        //     }
-        // }
+        if (searchby === "type") {
+            // *******************************
+            // for search book type
+            // *******************************
 
-        // this.setState({
-        //     nowdata:newdata
-        // })
+            let searchbooktypecallback = (data) => {
+                console.log(data);
+                this.setState({
+                    nowdata: data
+                })
+            }
 
+            searchbooktype(searchwhat, searchbooktypecallback);
+        }
 
-        // *******************************
-        // for search book info
-        // *******************************
+        if (searchby === "name") {
+            // *******************************
+            // for search book name
+            // *******************************
+            var newdata = [];
+            for (let i = 0; i < this.state.nowcatedata.length; i++) {
+                if (this.state.nowcatedata[i][2].search(searchwhat) !== -1) {
+                    newdata.push(this.state.nowcatedata[i]);
+                }
+            }
 
-        // let searchbookdatacallback = (data) => {
-        //     console.log(data);
-        //     this.setState({
-        //         nowdata: data
-        //     })
-        // }
+            this.setState({
+                nowdata: newdata
+            })
+        }
 
-        // searchbookdata(searchwhat, searchbookdatacallback);
+        if (searchby === "description") {
+            // *******************************
+            // for search book info
+            // *******************************
 
+            let searchbookdatacallback = (data) => {
+                console.log(data);
+                this.setState({
+                    nowdata: data
+                })
+            }
+
+            searchbookdata(searchwhat, searchbookdatacallback);
+        }
 
         // *******************************
         // for get book author
         // *******************************
 
 
-        let getbookauthorcallback = (data) => {
-            console.log(data);
-            alert("The author of the book is "+data);
-            // document.getElementById("header").innerHTML=data;
-        }
+        // let getbookauthorcallback = (data) => {
+        //     console.log(data);
+        //     alert("The author of the book is "+data);
+        //     // document.getElementById("header").innerHTML=data;
+        // }
 
-        getbookauthor(searchwhat, getbookauthorcallback);
-
+        // getbookauthor(searchwhat, getbookauthorcallback);
 
     }
 
@@ -197,6 +214,11 @@ export class Allbookscontainer extends React.Component {
                     <NameList ele={this.state.nowdata} parent={this} options="books"></NameList>
                     <Details nowselecteddata={this.state.nowselecteddata} parent={this} options={"allbooks"}></Details>
                 </div>
+                <select id='searchby'>
+                    <option value="type">by type</option>
+                    <option value="name">by name</option>
+                    <option value="description">by description</option>
+                </select>
                 <Searchbar parent={this}></Searchbar>
             </div>
         )

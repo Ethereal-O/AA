@@ -3,7 +3,9 @@ package com.example.bookstore.ServiceImpl;
 import com.example.bookstore.Dao.*;
 import com.example.bookstore.DaoImpl.BookDaoImpl;
 import com.example.bookstore.Entity.*;
+import com.example.bookstore.Repository.BookTypeRepository;
 import com.example.bookstore.Service.BookService;
+import com.example.bookstore.solr.Book;
 import com.example.bookstore.solr.BookIndex;
 import com.example.bookstore.solr.SolrUtil;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -128,6 +130,43 @@ public class BookServiceImpl implements BookService {
 //            addBook(bookEntity);
             addBookIndex(bookEntity);
         }
+    }
+
+
+    @Override
+    public Integer addbooktypedataservice() {
+        bookdao.addbooktypedata();
+        return 1;
+    }
+
+    @Override
+    public List searchbooktypeservice(String type) {
+        List<BookTypeEntity> similars=bookdao.searchsimilars(type);
+
+        List<BookEntity> bookdata=new ArrayList<>();
+        for (BookTypeEntity bookType:similars)
+        {
+            List<BookEntity> similarbooks=bookdao.findBookByType(bookType.getType());
+            bookdata.addAll(similarbooks);
+        }
+
+        List<List> data=new ArrayList<>();
+        for (int i=0;i<bookdata.size();i++)
+        {
+            List<String> tmpbook = new ArrayList<>();
+            BookEntity tmpbookentity=bookdata.get(i);
+            tmpbook.add(String.valueOf(tmpbookentity.getId()));
+            tmpbook.add(tmpbookentity.getType());
+            tmpbook.add(tmpbookentity.getName());
+            tmpbook.add(tmpbookentity.getAuthor());
+            tmpbook.add(String.valueOf(tmpbookentity.getPrice()));
+            tmpbook.add(tmpbookentity.getImage());
+            tmpbook.add(tmpbookentity.getDescription());
+            tmpbook.add(String.valueOf(tmpbookentity.getInventory()));
+            tmpbook.add(String.valueOf(tmpbookentity.getISBN_num()));
+            data.add(tmpbook);
+        }
+        return data;
     }
 
 

@@ -13,3 +13,6 @@ cd D:\Learning_And_Life\Redis\Redis-x64-5.0.14.1\
 cd D:\Learning_And_Life\Solr\solr-9.0.0
 ./bin/solr start -e cloud
 ./bin/solr stop -all
+
+
+开启eureka、gateway、getBookAuthor、bookstore

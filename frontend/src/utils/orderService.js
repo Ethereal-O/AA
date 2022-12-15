@@ -42,6 +42,12 @@ export function searchbookdataservice(list, callback)
     postrequest(url,list,callback);
 }
 
+export function searchbooktypeservice(list, callback)
+{
+    const url=preurl+"searchbooktypeservice";
+    postrequest(url,list,callback);
+}
+
 export function getbookauthorservice(list, callback)
 {
     const url=preurl+"getbookauthorservice";

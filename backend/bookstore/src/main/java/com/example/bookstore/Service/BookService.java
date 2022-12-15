@@ -12,6 +12,10 @@ public interface BookService {
 
     void pushbookdataservice() throws SolrServerException, IOException;
 
+    public Integer addbooktypedataservice();
+
+    public List searchbooktypeservice(String type);
+
     public Integer adminchangedataservice(Integer index, Integer options, String content);
 
     public Integer admindeletebookservice(Integer bookid);

@@ -46,6 +46,13 @@ export function searchbookdata(keyword, searchbookdatacallback)
     Orderservice.searchbookdataservice(list, searchbookdatacallback);
 }
 
+export function searchbooktype(type, searchbookdatacallback)
+{
+    let list=new FormData();
+    list.append("type",type);
+    Orderservice.searchbooktypeservice(list, searchbookdatacallback);
+}
+
 export function getbookauthor(bookname, getbookauthorcallback)
 {
     let list=new FormData();

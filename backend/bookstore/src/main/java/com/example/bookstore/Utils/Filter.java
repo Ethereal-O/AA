@@ -32,7 +32,8 @@ public class Filter implements javax.servlet.Filter {
                 || "/trylogoutservice".equals(servletPath)
                 || "/checkloginservice".equals(servletPath)
                 || "/registerservice".equals(servletPath)
-                || "/getallbookdataservice".equals(servletPath)){
+                || "/getallbookdataservice".equals(servletPath)
+                || "/addbooktypedataservice".equals(servletPath)){
 
             System.out.println("success  ======>");
             //放行

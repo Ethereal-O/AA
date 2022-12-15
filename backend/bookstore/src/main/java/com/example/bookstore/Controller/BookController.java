@@ -37,6 +37,17 @@ public class BookController {
         bookservice.pushbookdataservice();
     }
 
+    @RequestMapping("/addbooktypedataservice")
+    public void addbooktypedataservice() throws SolrServerException, IOException {
+        bookservice.addbooktypedataservice();
+    }
+
+    @RequestMapping("/searchbooktypeservice")
+    public List searchbooktypeservice(@RequestParam(name = "type")String type)
+    {
+        return bookservice.searchbooktypeservice(type);
+    }
+
     @RequestMapping("/adminchangedataservice")
     public Integer adminchangedataservice(@RequestParam(name = "index")Integer index, @RequestParam(name = "options")Integer options,@RequestParam(name = "content")String content)
     {
